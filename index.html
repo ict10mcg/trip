@@ -1,20 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <header>
-    <div class="nav-links">
-        <a href="intro.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</header>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCG Annual Trip</title>
-    <div id="footer">
-      Designed By - <a href="https://wa.me/+94768846375">Thisum Jalitha</a> ©
-    </div>
-    
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MvmH6DHkqxw8cUGV9iQRElduXkqxk4U9hw6gKz0d0BeMJQl7vznQMQYMHAXtVfbZeh5UmpT2lYuzDZXY6eDv1g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         
 body {
@@ -211,20 +200,38 @@ body {
     </style>
 </head>
 <body>
+
+<header>
+    <div class="nav-links">
+        <a href="intro.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCG Annual Trip</title>
+    <div id="footer">
+      Designed By - <a href="https://wa.me/+94768846375">Thisum Jalitha</a> ©
+    </div>
+  
 <div id="app-container">
     <h1>MCG Annual Trip</h1>
-    <h2>Grade 11 - 2025</h2>
+    <h2> Grade 11 - 2025</h2>
+
     <div class="teacher-name" id="teacher-name"></div>
-    <div id="current-date-time"></div>
-    <label for="class-select">Select Class:</label>
+    <div id="current-date-time"><i class="far fa-clock"></i></div>
+
+    <label for="class-select"><i class="fas fa-chalkboard"></i> Select Class:</label>
     <select id="class-select">
         <option value="Bus 01">Bus 01</option>
         <option value="Bus 02">Bus 02</option>
         <option value="Bus 03">Bus 03</option>
         <option value="Bus 04">Bus 04</option>
     </select>
+
     <div id="subject-container" style="display: none;">
-        <label for="subject-select">Select Subject:</label>
+        <label for="subject-select"><i class="fas fa-book"></i> Select Subject:</label>
         <select id="subject-select">
             <option value="Sinhala">Sinhala</option>
             <option value="English">English</option>
@@ -234,36 +241,42 @@ body {
             <option value="History">History</option>
         </select>
     </div>
+
     <div id="summary"></div>
+
     <table id="attendance-table">
         <thead>
             <tr>
-                <th>Mark</th>
-                <th>Student Number</th>
-                <th>Name</th>
-                <th>Time</th>
-                <th id="marks-column" style="display: none;">Marks</th>
+                <th><i class="fas fa-check-circle"></i> Mark</th>
+                <th><i class="fas fa-id-card"></i> Student Number</th>
+                <th><i class="fas fa-user"></i> Name</th>
+                <th><i class="fas fa-clock"></i> Time</th>
+                <th id="marks-column" style="display: none;"><i class="fas fa-star"></i> Marks</th>
             </tr>
         </thead>
         <tbody>
             <!-- Student rows will be added here dynamically -->
         </tbody>
     </table>
+
     <div id="summary-below"></div>
-    <button id="clear-data" class="button">Clear Data</button>
-    <button id="get-report" class="button">Get Report</button>
-    <button id="absent-report" class="button">Absent Report</button>
-    <button id="summary-report" class="button">Summary Report</button>
-    <button id="add-marks" class="button">Add Marks</button>
+
+    <button id="clear-data" class="button"><i class="fas fa-trash-alt"></i> Clear Data</button>
+    <button id="get-report" class="button"><i class="fas fa-file-alt"></i> Get Report</button>
+    <button id="absent-report" class="button"><i class="fas fa-user-times"></i> Absent Report</button>
+    <button id="summary-report" class="button"><i class="fas fa-chart-pie"></i> Summary Report</button>
+    <button id="add-marks" class="button"><i class="fas fa-plus"></i> Add Marks</button>
+
     <div id="classSelection" style="display: none;">
         <label><input type="checkbox" value="Bus 01"> Bus 01</label>
         <label><input type="checkbox" value="Bus 02"> Bus 02</label>
         <label><input type="checkbox" value="Bus 03"> Bus 03</label>
         <label><input type="checkbox" value="Bus 04"> Bus 04</label>
         <br>
-        <button id="generate-summary" class="button">Generate Selected Summary Report</button>
+        <button id="generate-summary" class="button"><i class="fas fa-file-signature"></i> Generate Selected Summary Report</button>
     </div>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
 <script>
