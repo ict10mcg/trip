@@ -1,79 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCG Annual Trip</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
   <header>
     <div class="nav-links">
-        <a href="intro.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+      <a href="intro.html"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
     </div>
-</header>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCG Annual Trip</title>
-    <div id="footer">
-      Designed By - <a href="https://wa.me/+94768846375">Thisum Jalitha</a> ©
-    </div>
-    <img src="https://i.ibb.co/kqw53KT/mcglogo.png" alt="School Logo" id="school-logo">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div id="app-container">
+  </header>
+
+  <div id="app-container">
     <h1>MCG Annual Trip</h1>
     <h2>Grade 11 - 2025</h2>
-    <div class="teacher-name" id="teacher-name"></div>
-    <div id="current-date-time"></div>
+    <div class="teacher-name" id="teacher-name">Teacher: <span>Loading...</span></div>
+    <div id="current-date-time">Date: --/--/----</div>
+
     <label for="class-select">Select Class:</label>
     <select id="class-select">
-        <option value="Bus 01">Bus 01</option>
-        <option value="Bus 02">Bus 02</option>
-        <option value="Bus 03">Bus 03</option>
-        <option value="Bus 04">Bus 04</option>
+      <option value="Bus 01">Bus 01</option>
+      <option value="Bus 02">Bus 02</option>
+      <option value="Bus 03">Bus 03</option>
+      <option value="Bus 04">Bus 04</option>
     </select>
+
     <div id="subject-container" style="display: none;">
-        <label for="subject-select">Select Subject:</label>
-        <select id="subject-select">
-            <option value="Sinhala">Sinhala</option>
-            <option value="English">English</option>
-            <option value="Maths">Maths</option>
-            <option value="Science">Science</option>
-            <option value="Buddhism">Buddhism</option>
-            <option value="History">History</option>
-        </select>
+      <label for="subject-select">Select Subject:</label>
+      <select id="subject-select">
+        <option value="Sinhala">Sinhala</option>
+        <option value="English">English</option>
+        <option value="Maths">Maths</option>
+        <option value="Science">Science</option>
+        <option value="Buddhism">Buddhism</option>
+        <option value="History">History</option>
+      </select>
     </div>
+
     <div id="summary"></div>
     <table id="attendance-table">
-        <thead>
-            <tr>
-                <th>Mark</th>
-                <th>Student Number</th>
-                <th>Name</th>
-                <th>Time</th>
-                <th id="marks-column" style="display: none;">Marks</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Student rows will be added here dynamically -->
-        </tbody>
+      <thead>
+        <tr>
+          <th>Mark</th>
+          <th>Student Number</th>
+          <th>Name</th>
+          <th>Time</th>
+          <th id="marks-column">Marks</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
     <div id="summary-below"></div>
-    <button id="clear-data" class="button">Clear Data</button>
-    <button id="get-report" class="button">Get Report</button>
-    <button id="absent-report" class="button">Absent Report</button>
-    <button id="summary-report" class="button">Summary Report</button>
-    <button id="add-marks" class="button">Add Marks</button>
+
+    <button id="clear-data" class="button"><i class="fas fa-trash"></i> Clear Data</button>
+    <button id="get-report" class="button"><i class="fas fa-download"></i> Get Report</button>
+    <button id="absent-report" class="button"><i class="fas fa-user-times"></i> Absent Report</button>
+    <button id="summary-report" class="button"><i class="fas fa-chart-bar"></i> Summary Report</button>
+    <button id="add-marks" class="button"><i class="fas fa-pen"></i> Add Marks</button>
+
     <div id="classSelection" style="display: none;">
-        <label><input type="checkbox" value="Bus 01"> Bus 01</label>
-        <label><input type="checkbox" value="Bus 02"> Bus 02</label>
-        <label><input type="checkbox" value="Bus 03"> Bus 03</label>
-        <label><input type="checkbox" value="Bus 04"> Bus 04</label>
-        <br>
-        <button id="generate-summary" class="button">Generate Selected Summary Report</button>
+      <label><input type="checkbox" value="Bus 01"> Bus 01</label>
+      <label><input type="checkbox" value="Bus 02"> Bus 02</label>
+      <label><input type="checkbox" value="Bus 03"> Bus 03</label>
+      <label><input type="checkbox" value="Bus 04"> Bus 04</label>
+      <br>
+      <button id="generate-summary" class="button">Generate Selected Summary Report</button>
     </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
-<script src="kastiya.js"></script>
-<script src="script.js"></script>
+  </div>
+
+  <div id="footer">
+    Designed By - <a href="https://wa.me/+94768846375">Thisum Jalitha</a> ©
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+  <script src="kastiya.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
